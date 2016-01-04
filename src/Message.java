@@ -165,7 +165,7 @@ public enum Message {
      * Message.EXAMPLE_MESSAGE.getText("one","two","three",'c','4');  // this message will be red, but word one, two, three - dark red
      *
      ** Control codes
-     * Conrol codes are text parameteres, that will be ignored and don't shown as ordinary parameter
+     * Control codes are text parameteres, that will be ignored and don't shown as ordinary parameter
      * - "SKIPCOLOR" - use this to disable colorizing of parameters
      * - "NOCOLOR" (or "NOCOLORS") - return uncolored text, clear all colors in text
      * - "FULLFLOAT" - show full float number, by default it limit by two symbols after point (0.15 instead of 0.1483294829)
