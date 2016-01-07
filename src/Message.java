@@ -171,13 +171,13 @@ public enum Message {
      * @return
      */
     public String getText (Object... keys){
-        if (keys.length ==0) return TextFormat.colorize("&"+c1+this.message);
+        if (keys.length ==0) return TextFormat.colorize("&"+ color1 +this.message);
         String str = this.message;
         boolean noColors = false;
         boolean skipDefaultColors = false;
         boolean fullFloat = false;
         int count=1;
-        char [] colors = new char[]{c1,c2};
+        char [] colors = new char[]{color1 == null ? c1 : color1 , color2 == null ? c2 : color2};
         int c = 0;
         DecimalFormat fmt = new DecimalFormat("####0.##");
         for (int i = 0; i<keys.length; i++){
@@ -218,8 +218,20 @@ public enum Message {
     }
 
     private String message;
+    private Character color1;
+    private Character color2;
     Message (String msg){
         message = msg;
+        this.color1 = null;
+        this.color2 = null;
+    }
+    Message (String msg, char color1, char color2){
+        this.message = msg;
+        this.color1 = color1;
+        this.color2 = color2;
+    }
+    Message (String msg, char color){
+        this (msg,color,color);
     }
 
     @Override
