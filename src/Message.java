@@ -247,9 +247,9 @@ public enum Message {
     public static void init(PluginBase plg){
         plugin = plg;
         language = plg.getConfig().getNested("general.language","english");
-        plg.getConfig().setNested("general.language", language);
+        plg.getConfig().set("general.language", language);
         debugMode = plg.getConfig().getNested("general.debug-mode",false);
-        plg.getConfig().setNested("general.debug-mode",debugMode);
+        plg.getConfig().set("general.debug-mode",debugMode);
         plg.saveConfig();
         initMessages();
         saveMessages();
